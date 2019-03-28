@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FastFCN: Rethinking Dilated Convolution in the Backbone for Semantic Segmentation</title>
+
+  <!-- bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<div id="header">
+  <h1>FastFCN: Rethinking Dilated Convolution in the Backbone for Semantic Segmentation</h1>
+  <h4>Huikai Wu, Junge Zhang, Kaiqi Huang, Kongming Liang, Yizhou Yu</h4>
+  <div align="middle">
+    <a href="http://www.nlpr.ia.ac.cn/en/">
+        <img src="http://www.nlpr.ia.ac.cn/nlpren/images/banner.jpg" style="height:75px; float: center; margin-left: 7%;">
+    </a>
+  </div>
+
+  <div align="middle">
+      <h3>
+        <a href="https://github.com/wuhuikai/FastFCN">[GitHub]</a>
+        <a href="fast_fcn.pdf">[Paper]</a>
+        <a href="">[arXiv]</a>
+        <a href="#visual">[Visual Results]</a>
+        <a href="http://wuhuikai.me">[Home Page]</a>
+      </h3>
+  </div>
+
+  <div style="clear:both;"></div>
+</div>
+
+<div class="sechighlight">
+<div class="container sec">
+  <h2>Abstract</h2>Modern approaches for semantic segmentation usually employ dilated convolutions in the backbone to extract high-resolution feature maps, which brings heavy computation complexity and memory footprint. To replace the time and memory consuming dilated convolutions, we propose a novel joint upsampling module named Joint Pyramid Upsampling (JPU) by formulating the task of extracting high-resolution feature maps into a joint upsampling problem. With the proposed JPU, our method reduces the computation complexity by more than three times without performance loss. Experiments show that JPU is superior to other upsampling modules, which can be plugged into many existing approaches to reduce computation complexity and improve performance. By replacing dilated convolutions with the proposed JPU module, our method achieves the state-of-the-art performance in Pascal Context dataset (mIoU of 53.13%) and ADE20K dataset (final score of 0.5584) while running 3 times faster.
+  <div id="coursedesc">
+  </div>
+</div>
+</div>
+
+<div class="container sec">
+<div class='row'>
+    <h2>Framework Overview:</h2>
+    <a href="fast_fcn.pdf">
+        <img src='images/Framework.png' class='img-responsive center-block'>
+    </a>
+    <br>
+    <h2>Joint Pyramid Upsampling (JPU):</h2>
+    <a href="https://github.com/wuhuikai/FastFCN">
+        <img src='images/JPU.png' class='img-responsive center-block'>
+    </a>
+</div>
+</div>
+
+<div class="sechighlight">
+<div class="container sec" style="font-size:18px">
+  <div class="row">
+
+    <div class="col-md-5">
+      <h2>Code and Extras</h2>
+      You can find the code <a href="https://github.com/wuhuikai/FastFCN">on Github</a>,
+      including:
+      <ul>
+        <li>Training/Test source code (PyTorch)</li>
+        <li>Pretrained models and datasets</li>
+        <li>Step-by-step tutorial to run our algorithm</li>
+      </ul>
+    </div>
+    <div class="col-md-7">
+      <h2>Bibtex</h2>
+      <pre style="font-size:12px;">
+@inproceedings{wu2019fastfcn,
+  title     = {FastFCN: Rethinking Dilated Convolution in the Backbone for Semantic Segmentation},
+  author    = {Wu, Huikai and Zhang, Junge and Huang, Kaiqi and Liang, Kongming and Yu, Yizhou},
+  booktitle = {arXiv},
+  year = {2019}
+}</pre>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!--######################## AUTO #################################-->
+<div class="tabs" id="visual">
+<h1>VISUAL RESULTS</h1>
+<!-- Radio button and lable for #tab-content1 -->
+<input type="radio" name="tabs" id="tab1" checked>
+<label for="tab1">
+    <i class="fa fa-html5"></i><span>PContext</span>
+</label>
+<!-- Radio button and lable for #tab-content2 -->
+<input type="radio" name="tabs" id="tab2">
+<label for="tab2">
+  <i class="fa fa-css3"></i><span>ADE20K</span>
+</label>
+
+<div id="tab-content1" class="tab-content">
+<div class="container sec">
+    <div class='row'>
+      <div class="col-md-3 nopadding">
+        <h3>Input</h3>
+      </div>
+      <div class="col-md-3 nopadding">
+        <h3>GT</h3>
+      </div>
+      <div class="col-md-3 nopadding">
+        <h3>EncNet</h3>
+      </div>
+      <div class="col-md-3 nopadding">
+        <h3>Ours</h3>
+      </div>
+    </div>
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2008_007279.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2008_007279.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2008_007279.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2008_007279.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2010_003270.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2010_003270.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2010_003270.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2010_003270.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2009_002618.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2009_002618.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2009_002618.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2009_002618.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2008_006925.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2008_006925.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2008_006925.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2008_006925.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2009_001407.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2009_001407.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2009_001407.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2009_001407.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2010_001749.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2010_001749.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2010_001749.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2010_001749.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2010_005738.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2010_005738.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2010_005738.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2010_005738.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2008_003291.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2008_003291.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2008_003291.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2008_003291.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2009_000291.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2009_000291.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2009_000291.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2009_000291.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2010_005082.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2010_005082.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2010_005082.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2010_005082.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2009_004366.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2009_004366.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2009_004366.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2009_004366.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2010_003419.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2010_003419.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2010_003419.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2010_003419.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2010_005719.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2010_005719.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2010_005719.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2010_005719.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2010_003541.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2010_003541.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2010_003541.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2010_003541.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2008_006218.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2008_006218.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2008_006218.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2008_006218.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2010_005756.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2010_005756.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2010_005756.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2010_005756.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_2008_004742.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_2008_004742.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_2008_004742.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_2008_004742.png" class="img-responsive"/>
+        </div>
+    </div>
+</div>
+</div>
+
+<div id="tab-content2" class="tab-content">
+<div class="container sec">
+    <div class='row'>
+      <div class="col-md-3 nopadding">
+        <h3>Input</h3>
+      </div>
+      <div class="col-md-3 nopadding">
+        <h3>GT</h3>
+      </div>
+      <div class="col-md-3 nopadding">
+        <h3>EncNet</h3>
+      </div>
+      <div class="col-md-3 nopadding">
+        <h3>Ours</h3>
+      </div>
+    </div>
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_ADE_val_00001750.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_ADE_val_00001750.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_ADE_val_00001750.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_ADE_val_00001750.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_ADE_val_00001344.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_ADE_val_00001344.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_ADE_val_00001344.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_ADE_val_00001344.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_ADE_val_00001838.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_ADE_val_00001838.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_ADE_val_00001838.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_ADE_val_00001838.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_ADE_val_00000925.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_ADE_val_00000925.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_ADE_val_00000925.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_ADE_val_00000925.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_ADE_val_00000767.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_ADE_val_00000767.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_ADE_val_00000767.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_ADE_val_00000767.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_ADE_val_00001871.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_ADE_val_00001871.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_ADE_val_00001871.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_ADE_val_00001871.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_ADE_val_00000006.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_ADE_val_00000006.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_ADE_val_00000006.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_ADE_val_00000006.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_ADE_val_00000744.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_ADE_val_00000744.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_ADE_val_00000744.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_ADE_val_00000744.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_ADE_val_00000150.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_ADE_val_00000150.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_ADE_val_00000150.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_ADE_val_00000150.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_ADE_val_00000178.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_ADE_val_00000178.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_ADE_val_00000178.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_ADE_val_00000178.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_ADE_val_00000024.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_ADE_val_00000024.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_ADE_val_00000024.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_ADE_val_00000024.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_ADE_val_00000797.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_ADE_val_00000797.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_ADE_val_00000797.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_ADE_val_00000797.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_ADE_val_00000863.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_ADE_val_00000863.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_ADE_val_00000863.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_ADE_val_00000863.png" class="img-responsive"/>
+        </div>
+    </div>
+
+
+    <div class='row'>
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/img_ADE_val_00000133.jpg" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/gt_ADE_val_00000133.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/encnet_ADE_val_00000133.png" class="img-responsive"/>
+        </div>
+
+        <div class="col-md-3 nopadding">
+           <img src="images/supplementary/ours_ADE_val_00000133.png" class="img-responsive"/>
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+<!--###############################################################-->
+<div class="sechighlight">
+<div id="footer">
+</div>
+</div>
+
+</body></html>

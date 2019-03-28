@@ -1,0 +1,420 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+#header {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#teaser {
+  height: 410px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 3px;
+  padding-right: 3px;
+  background-color: #8C1515;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+h1 {
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+}
+h2 {
+  font-size: 25px;
+  font-weight: 300;
+}
+h4 {
+  text-align: center;
+}
+.lhead {
+  font-weight: normal;
+  margin-top: 5px;
+}
+.litem {
+  margin-top: 5px;
+}
+#footer {
+  height: 250px;
+  padding-top: 50px;
+  text-align: center;
+  position: relative;
+}
+.instructorphoto img {
+  width: 100px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+.instructor {
+  display: inline-block;
+  width: 130px;
+  text-align: center;
+  margin-right: 20px;
+}
+.sec {
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.tt {
+  color: #060;
+  display: inline-block;
+}
+
+#inputlayer {
+  width: 65px;
+}
+.layer {
+  width: 35px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+  margin-bottom: 5px;
+}
+.actmap {
+  display: block;
+  border: 2px solid #FFF;
+}
+#convnetvis {
+  text-align: center;
+}
+#probsdiv {
+  
+}
+.pp {
+  color: white;
+  text-align: left;
+  padding: 5px;
+  height: 32px;
+  margin: 2px;
+  background-color: rgb(85,187,85);
+  overflow: visible !important;
+}
+
+#convask {
+  position: absolute;
+  top: 360px;
+  right: 16px;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+#explain {
+  display: none;
+  background-color: #FF9;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+.qq {
+  color: #060;
+}
+.qa {
+  font-style: italic;
+}
+.qqa {
+  margin-bottom: 20px;
+}
+.spanh {
+  font-weight: normal;
+}
+.sechighlight {
+  background-color: #f7f6f1;
+}
+#coursedesc {
+  text-align: justify;
+}
+#footermsg {
+  color: #333;
+  margin: 20px;
+}
+#classicons {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.wimg {
+  max-width: 100%;
+}
+.demoimg {
+  max-width: 100%;
+  margin: 0 auto;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.rnndemo {
+  font-size: 18px;
+  text-align: center;
+}
+.demoimg2 {
+  max-width: 100%;
+  margin: 0 auto;
+}
+.demodiv2 {
+  background-color: white;
+  height: 380px;
+  padding: 5px;
+  border-radius: 4px;
+}
+.instructorphoto img {
+  width: 120px;
+  border-radius: 120px;
+  margin-bottom: 10px;
+}
+.instructor {
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+  margin-right: 20px;
+}
+#gallery {
+}
+.egimg {
+  display: inline-block;
+  vertical-align: top;
+}
+.egimg img {
+  max-width: 370px;
+}
+.hh {
+  color: #090;
+}
+.smallimg {
+  width: 256px;
+  display: inline-block;
+  text-align: center;
+}
+.spacer {
+  margin:0;
+  padding:0;
+  height:5px;
+}
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+
+
+
+
+/* Styles the thumbnail */
+a.lightbox img {
+height: 150px;
+border: 3px solid white;
+box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+margin: 94px 20px 20px 20px;
+}
+
+/* Styles the lightbox, removes it from sight and adds the fade-in transition */
+.lightbox-target {
+position: fixed;
+top: -100%;
+width: 100%;
+background: rgba(0,0,0,.7);
+width: 100%;
+opacity: 0;
+-webkit-transition: opacity .5s ease-in-out;
+-moz-transition: opacity .5s ease-in-out;
+-o-transition: opacity .5s ease-in-out;
+transition: opacity .5s ease-in-out;
+overflow: hidden;
+}
+
+/* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
+.lightbox-target img {
+margin: auto;
+position: absolute;
+top: 0;
+left:0;
+right:0;
+bottom: 0;
+max-height: 0%;
+max-width: 0%;
+border: 3px solid white;
+box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+box-sizing: border-box;
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+}
+
+/* Styles the close link, adds the slide down transition */
+a.lightbox-close {
+display: block;
+width:50px;
+height:50px;
+box-sizing: border-box;
+background: white;
+color: black;
+text-decoration: none;
+position: absolute;
+top: -80px;
+right: 0;
+-webkit-transition: .5s ease-in-out;
+-moz-transition: .5s ease-in-out;
+-o-transition: .5s ease-in-out;
+transition: .5s ease-in-out;
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+a.lightbox-close:before {
+content: "";
+display: block;
+height: 30px;
+width: 1px;
+background: black;
+position: absolute;
+left: 26px;
+top:10px;
+-webkit-transform:rotate(45deg);
+-moz-transform:rotate(45deg);
+-o-transform:rotate(45deg);
+transform:rotate(45deg);
+}
+
+/* Provides part of the "X" to eliminate an image from the close link */
+a.lightbox-close:after {
+content: "";
+display: block;
+height: 30px;
+width: 1px;
+background: black;
+position: absolute;
+left: 26px;
+top:10px;
+-webkit-transform:rotate(-45deg);
+-moz-transform:rotate(-45deg);
+-o-transform:rotate(-45deg);
+transform:rotate(-45deg);
+}
+
+/* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
+.lightbox-target:target {
+opacity: 1;
+top: 0;
+bottom: 0;
+}
+
+.lightbox-target:target img {
+max-height: 100%;
+max-width: 100%;
+}
+
+.lightbox-target:target a.lightbox-close {
+top: 0px;
+}
+
+
+
+
+.tabs {
+    max-width: 100%;
+    float: none;
+    list-style: none;
+    padding: 0;
+    margin: 75px auto;
+    border-bottom: 4px solid #ccc;
+}
+.tabs:after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.tabs input[type=radio] {
+    display:none;
+}
+.tabs label {
+    display: block;
+    float: left;
+    width: 50%;
+    color: #ccc;
+    font-size: 30px;
+    font-weight: normal;
+    text-decoration: none;
+    text-align: center;
+    line-height: 2;
+    cursor: pointer;
+    box-shadow: inset 0 4px #ccc;
+    border-bottom: 4px solid #ccc;
+    -webkit-transition: all 0.5s; /* Safari 3.1 to 6.0 */
+    transition: all 0.5s;
+}
+.tabs label span {
+    display: none;
+}
+.tabs label i {
+    padding: 5px;
+    margin-right: 0;
+}
+.tabs label:hover {
+    color: #3498db;
+    box-shadow: inset 0 4px #3498db;
+    border-bottom: 4px solid #3498db;
+}
+.tab-content {
+    display: none;
+    width: 100%;
+    float: left;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color:#ffffff;
+}
+.tab-content * {
+    -webkit-animation: scale 0.7s ease-in-out;
+    -moz-animation: scale 0.7s ease-in-out;
+    animation: scale 0.7s ease-in-out;
+}
+@keyframes scale {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+    }
+  50% {
+    transform: scale(1.01);
+    opacity: 0.5;
+    }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.tabs [id^="tab"]:checked + label {
+    background: #FFF;
+    box-shadow: inset 0 4px #3498db;
+    border-bottom: 4px solid #3498db;
+    color: #3498db;
+}
+#tab00:checked ~ #tab-content00,
+#tab0:checked ~ #tab-content0,
+#tab1:checked ~ #tab-content1,
+#tab2:checked ~ #tab-content2,
+#tab3:checked ~ #tab-content3,
+#tab4:checked ~ #tab-content4,
+#tab5:checked ~ #tab-content5,
+#tab6:checked ~ #tab-content6,
+#tab7:checked ~ #tab-content7,
+#tab8:checked ~ #tab-content8
+{
+    display: block;
+}
+@media (min-width: 768px) {
+    .tabs i {
+        padding: 5px;
+        margin-right: 10px;
+    }
+    .tabs label span {
+        display: inline-block;
+    }
+}
